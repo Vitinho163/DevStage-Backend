@@ -9,7 +9,7 @@
 
 # English <a name="english"></a>
 
-DevStage - Back-End is a **Node.js** application built with **Fastify** that serves as the backend for the DevStage platform. It handles authentication, event subscriptions, and ranking systems with **PostgreSQL** and **Redis**.
+DevStage - Back-End is a **Node.js** application built with **Fastify**, designed to manage event subscriptions, invitation tracking and ranking. The system uses **PostgreSQL** for database storage and **Redis** for invitation tracking and click counting.
 
 ## Summary
 
@@ -72,12 +72,17 @@ POSTGRES_URL="postgresql://docker:docker@localhost:5432/connect"
 REDIS_URL="redis://localhost:6379"
 ```
 
-4. Run the database migration:
+4. Start Docker containers for database and Redis:
+```bash
+docker compose up -d
+```
+
+5. Run the database migration:
 ```bash
 npm run db:migrate
 ```
 
-5. Start the server:
+6. Start the server:
 ```bash
 npm run dev
 ```
@@ -105,7 +110,7 @@ https://github.com/Vitinho163/DevStage-Frontend
 
 # Português <a name="portugues"></a>
 
-DevStage - Back-End é uma aplicação **Node.js** baseada no **Fastify** que gerencia autenticação, inscrições em eventos e sistemas de ranking, utilizando **PostgreSQL** e **Redis**.
+DevStage - Back-End é uma aplicação **Node.js** desenvolvida com **Fastify**, projetada para gerenciar inscrições em eventos, rastreamento de convites e ranking. O sistema utiliza **PostgreSQL** para armazenamento de dados e **Redis** para rastreamento de convites e contagem de cliques.
 
 ## Sumário
 
@@ -168,12 +173,17 @@ POSTGRES_URL="postgresql://docker:docker@localhost:5432/connect"
 REDIS_URL="redis://localhost:6379"
 ```
 
-4. Execute a migração do banco de dados:
+4. Inicie os contêineres Docker para o banco de dados e Redis:
+```bash
+docker compose up -d
+```
+
+5. Execute a migração do banco de dados:
 ```bash
 npm run db:migrate
 ```
 
-5. Inicie o servidor:
+6. Inicie o servidor:
 ```bash
 npm run dev
 ```
