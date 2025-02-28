@@ -33,5 +33,5 @@ POST http://localhost:3333/messages
 Content-Type: application/json
 
 {
-  "message": "Quais os e-mails dos usuários cadastrados em minha aplicação?"
+  "message": "Me diga o nome dos usuários que não conseguiram convidar ninguèm pro evento!"
 }
