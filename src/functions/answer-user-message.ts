@@ -1,8 +1,6 @@
-import { generateText, tool } from 'ai'
-import z from 'zod'
+import { generateText } from 'ai'
 import { openai } from '../ai/openai'
 import { postgresTool } from '../ai/tools/postgres-tool'
-import { pg } from '../drizzle/client'
 import { redisTool } from '../ai/tools/redis-tool'
 
 interface AnswerUserMessageParams {
