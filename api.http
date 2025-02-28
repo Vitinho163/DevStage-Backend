@@ -2,27 +2,36 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-  "name": "Usuário Indicado3",
-  "email": "indicado3@gmail.com",
-  "referrer": "9e8275e8-570f-487a-af74-502f269bcb2d"
+  "name": "indicado40532",
+  "email": "indicado40532@gmail.com",
+  "referrer": "7936f8ba-da9b-4a09-a8da-9546ffe1f799"
 }
 
 ###
 
-GET http://localhost:3333/invites/6d920a85-a58b-4746-99ea-7f7be35d9690
+GET http://localhost:3333/invites/7936f8ba-da9b-4a09-a8da-9546ffe1f799
 
 ###
 
-GET http://localhost:3333/subscribers/6d920a85-a58b-4746-99ea-7f7be35d9690/ranking/clicks
+GET http://localhost:3333/subscribers/7936f8ba-da9b-4a09-a8da-9546ffe1f799/ranking/clicks
 
 ###
 
-GET http://localhost:3333/subscribers/6d920a85-a58b-4746-99ea-7f7be35d9690/ranking/count
+GET http://localhost:3333/subscribers/7936f8ba-da9b-4a09-a8da-9546ffe1f799/ranking/count
 
 ###
 
-GET http://localhost:3333/subscribers/6d920a85-a58b-4746-99ea-7f7be35d9690/ranking/position
+GET http://localhost:3333/subscribers/7936f8ba-da9b-4a09-a8da-9546ffe1f799/ranking/position
 
 ###
 
 GET http://localhost:3333/ranking
+
+###
+
+POST http://localhost:3333/messages
+Content-Type: application/json
+
+{
+  "message": "Quais os e-mails dos usuários cadastrados em minha aplicação?"
+}
