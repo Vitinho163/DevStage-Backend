@@ -65,11 +65,18 @@ npm install
 PORT=3333
 
 # URLs
+
 WEB_URL="http://localhost:3000"
 
 # Database
+
 POSTGRES_URL="postgresql://docker:docker@localhost:5432/connect"
+POSTGRES_REPLICA_URL="postgresql://docker:docker@localhost:5433/connect"
 REDIS_URL="redis://localhost:6379"
+
+# OpenAI
+
+OPENAI_API_KEY="SUA_KEY"
 ```
 
 4. Start Docker containers for database and Redis:
@@ -166,11 +173,18 @@ npm install
 PORT=3333
 
 # URLs
+
 WEB_URL="http://localhost:3000"
 
-# Banco de Dados
+# Database
+
 POSTGRES_URL="postgresql://docker:docker@localhost:5432/connect"
+POSTGRES_REPLICA_URL="postgresql://docker:docker@localhost:5433/connect"
 REDIS_URL="redis://localhost:6379"
+
+# OpenAI
+
+OPENAI_API_KEY="SUA_KEY"
 ```
 
 4. Inicie os contêineres Docker para o banco de dados e Redis:
