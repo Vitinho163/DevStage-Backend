@@ -1,6 +1,6 @@
 import { tool } from 'ai'
 import z from 'zod'
-import { pg } from '../../drizzle/client'
+import { replicaPg } from '../../drizzle/client'
 
 export const postgresTool = tool({
   description: `
@@ -29,7 +29,7 @@ export const postgresTool = tool({
   execute: async ({ query, params }) => {
     console.log({ query, params })
 
-    const result = await pg.unsafe(query, params)
+    const result = await replicaPg.unsafe(query, params)
 
     return JSON.stringify(result)
   },
