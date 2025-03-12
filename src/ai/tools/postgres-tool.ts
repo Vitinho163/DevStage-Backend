@@ -1,6 +1,7 @@
 import { tool } from 'ai'
 import z from 'zod'
 import { replicaPg } from '../../drizzle/client'
+import { getCachedDDL } from '../generate-ddl'
 
 export const postgresTool = tool({
   description: `
@@ -10,12 +11,7 @@ export const postgresTool = tool({
 
     Tables:
     """
-    CREATE TABLE subscriptions (
-      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-      name TEXT NOT NULL,
-      email TEXT NOT NULL UNIQUE,
-      created_at TIMESTAMP NOT NULL DEFAULT NOW()
-    );
+    ${getCachedDDL()}
     """
 
     Todas operações devem retornar um máximo de 50 itens.
