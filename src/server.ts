@@ -38,6 +38,20 @@ app.register(fastifySwagger, {
       title: 'DevStage',
       version: '0.0.1',
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+        RefreshToken: {
+          type: 'apiKey',
+          in: 'cookie',
+          name: 'refreshToken',
+        },
+      },
+    },
   },
   transform: jsonSchemaTransform,
 })

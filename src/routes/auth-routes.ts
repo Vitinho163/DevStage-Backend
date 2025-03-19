@@ -51,8 +51,9 @@ export const authRoutes: FastifyPluginAsyncZod = async app => {
     {
       schema: {
         summary: 'Refresh admin token',
+        description: '*Require cookie refreshToken*',
         tags: ['auth'],
-        cookies: authSchemas.refreshCookie,
+        security: [ { RefreshToken: [] } ],
         response: {
           200: authSchemas.loginResponse,
           401: errorResponseSchema,
