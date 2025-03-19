@@ -1,3 +1,4 @@
+// Realizar inscrição com ou sem referrer
 POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
@@ -8,30 +9,64 @@ Content-Type: application/json
 }
 
 ###
-
+// Click no invite e redirecionamento para o site
 GET http://localhost:3333/invites/f3ab87ac-8053-4e39-ab52-2280aee1e993
 
 ###
-
+// Obter quantidade de clicks no invite do usuário
 GET http://localhost:3333/subscribers/f3ab87ac-8053-4e39-ab52-2280aee1e993/ranking/clicks
 
 ###
-
+// Obter quantidade de inscritos no invite do usuário
 GET http://localhost:3333/subscribers/f3ab87ac-8053-4e39-ab52-2280aee1e993/ranking/count
 
 ###
-
+// Obter posição do usuário no ranking
 GET http://localhost:3333/subscribers/f3ab87ac-8053-4e39-ab52-2280aee1e993/ranking/position
 
 ###
-
+// Obter ranking de todos os usuários
 GET http://localhost:3333/ranking
 
 ###
-
+// Mensagem AI (somente admins)
 POST http://localhost:3333/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDdlZmUwOC04MmQ5LTQ1NDUtOTFmNS0zN2M1ODc3ZDc5MTciLCJpYXQiOjE3NDIzNTAxOTMsImV4cCI6MTc0MjM1MTA5M30.e5cCk1IVgWSaJTXkWKz7hoqdIDHptpqDEBfQ3Hl4QbI
 Content-Type: application/json
 
 {
   "message": "Me diga o nome dos usuários que não conseguiram convidar ninguèm pro evento!"
 }
+
+### 
+// Login (admins)
+POST http://localhost:3333/admin/login
+Content-Type: application/json
+
+{
+  "email": "victor@example.com",
+  "password": "examplepassword"
+}
+
+### 
+// Create user (superadmin)
+POST http://localhost:3333/admin/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDdlZmUwOC04MmQ5LTQ1NDUtOTFmNS0zN2M1ODc3ZDc5MTciLCJpYXQiOjE3NDIzNTAxOTMsImV4cCI6MTc0MjM1MTA5M30.e5cCk1IVgWSaJTXkWKz7hoqdIDHptpqDEBfQ3Hl4QbI
+Content-Type: application/json
+
+{
+  "email": "fulano@example.com",
+  "password": "fulano123"
+}
+
+### 
+// Refresh token (admins)
+POST http://localhost:3333/admin/refresh
+Cookie: refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDdlZmUwOC04MmQ5LTQ1NDUtOTFmNS0zN2M1ODc3ZDc5MTciLCJpYXQiOjE3NDIzNTAxOTMsImV4cCI6MTc0Mjk1NDk5M30.Q09GGd2MMPlfgNemYdaG7tQvoMfa19O9ixI3lwgVTGY
+
+
+###
+// Logout (admins)
+POST http://localhost:3333/admin/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDdlZmUwOC04MmQ5LTQ1NDUtOTFmNS0zN2M1ODc3ZDc5MTciLCJpYXQiOjE3NDIzNTAxOTMsImV4cCI6MTc0MjM1MTA5M30.e5cCk1IVgWSaJTXkWKz7hoqdIDHptpqDEBfQ3Hl4QbI
+

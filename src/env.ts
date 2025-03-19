@@ -7,6 +7,11 @@ const envSchema = z.object({
   REDIS_URL: z.string().url(),
   WEB_URL: z.string().url(),
   OPENAI_API_KEY: z.string(),
+  JWT_ACCESS_SECRET: z.string(),
+  JWT_REFRESH_SECRET: z.string(),
+  JWT_ACCESS_EXPIRATION: z.string(),
+  JWT_REFRESH_EXPIRATION: z.string(),
+  NODE_ENV: z.enum(['development', 'production']).default('development'),
 })
 
 export const env = envSchema.parse(process.env)
