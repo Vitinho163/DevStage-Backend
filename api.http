@@ -3,9 +3,9 @@ POST http://localhost:3333/subscriptions
 Content-Type: application/json
 
 {
-  "name": "Indicado002",
-  "email": "indicado002@gmail.com",
-  "referrer": "f3ab87ac-8053-4e39-ab52-2280aee1e993"
+  "name": "Fabricio Lima",
+  "email": "fabricioL@gmail.com",
+  "referrer": "9e5ce31c-3438-4a48-a99b-6ed7eb69985b"
 }
 
 ###
@@ -37,6 +37,11 @@ Content-Type: application/json
 {
   "message": "Me diga o nome dos usuários que não conseguiram convidar ninguèm pro evento!"
 }
+
+###
+// Obter estatisticas do evento (somente admins)
+GET http://localhost:3333/stats
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiMDdlZmUwOC04MmQ5LTQ1NDUtOTFmNS0zN2M1ODc3ZDc5MTciLCJpYXQiOjE3NDIzNTAxOTMsImV4cCI6MTc0MjM1MTA5M30.e5cCk1IVgWSaJTXkWKz7hoqdIDHptpqDEBfQ3Hl4QbI
 
 ### 
 // Login (admins)

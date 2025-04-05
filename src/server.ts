@@ -18,6 +18,7 @@ import { accessInviteLinkRoute } from './routes/access-invite-link-route'
 import { adminRoutes } from './routes/admin-routes'
 import { authRoutes } from './routes/auth-routes'
 import { getRankingRoute } from './routes/get-ranking-route'
+import { getStatsRoute } from './routes/get-stats-route'
 import { getSubscriberInviteClicksRoute } from './routes/get-subscriber-invite-clicks-route'
 import { getSubscriberInvitesCountRoute } from './routes/get-subscriber-invites-count-route'
 import { getSubscriberRankingPositionRoute } from './routes/get-subscriber-ranking-position-route'
@@ -63,7 +64,11 @@ app.register(fastifySwaggerUi, {
 app.addHook('onRequest', async (request, reply) => {
   if (request.url === '/admin/login' || request.url === '/admin/refresh') return
 
-  if (request.url.startsWith('/admin') || request.url === '/messages') {
+  if (
+    request.url.startsWith('/admin') ||
+    request.url === '/messages' ||
+    request.url === '/stats'
+  ) {
     const token = request.headers.authorization?.split(' ')[1]
     if (!token) return reply.code(401).send({ error: 'Token não fornecido' })
 
@@ -90,6 +95,7 @@ app.register(getSubscriberInviteClicksRoute)
 app.register(getSubscriberInvitesCountRoute)
 app.register(getSubscriberRankingPositionRoute)
 app.register(getRankingRoute)
+app.register(getStatsRoute)
 app.register(sendMessageRoute)
 app.register(authRoutes)
 app.register(adminRoutes)
